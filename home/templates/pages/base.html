@@ -1,0 +1,24 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock  %}</title>
+</head>
+<body> 
+    {% block content %}
+    
+    {% endblock  %}
+    
+    <div class ="col-sm-1">
+        {% if user.username %}
+            <p>Xin chao {{User.username}}</p>
+            <p><a href="{% url 'logout' %}">Đăng xuất</a></p>
+        {% else %}
+            <p><a href="{% url 'register' %}">Đăng kí</a>|<a href="{% url 'login' %}">Đăng nhập</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>   
+ 
